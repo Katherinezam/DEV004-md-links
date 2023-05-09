@@ -1,9 +1,10 @@
-const mdLinks = require('../');
-
+import { mdLinks } from "../mdlinks.js";
 
 describe('mdLinks', () => {
 
-  it('should...', () => {
+  
+
+it('mdlink procesa', () => {
     console.log('FIX ME!');
   });
 
