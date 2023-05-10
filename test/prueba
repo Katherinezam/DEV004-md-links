@@ -1,0 +1,68 @@
+export const mdLinks = (path, options) => {
+
+  // Absot c:/archivos/katy/file.md
+// Realtivo     katy/file.md
+//  c:/archivos/katy/file.md
+
+    return new Promise((resolve, reject) => {
+
+        if (existeRuta(path)) {
+    
+            if (esRutaAbsoluta(path)) {
+                extraerLinkdelMd(path,options)
+                
+
+            } else {
+                const rutaAbsoluta = convertirRutaAbsoluta(path); 
+            
+                if (esRutaAbsoluta(rutaAbsoluta)) {
+                    extraerLinkdelMd(path,options)
+                } 
+            }
+
+            
+
+        } else {
+            reject(new Error(`La ruta (x) no existe`));
+            //fin
+        }
+
+    
+    });
+};
+
+function extraerLinkdelMd(path,options){
+    
+    if (esArchivoMd(path)){
+        console.log('La ruta es un archivo .md');
+
+        // Ler archivo md
+        //Tienes link?
+            // SI -> extraer link
+
+                // Tiene Link?
+                    //SI -> Los almaceno en unaarray con un formato
+                    
+                        // Tiene la opcion Validate? (options.validate == true )
+                            // SI ->  Validas links haciendo peticiones http de cada uno
+                                    // La llamda http retorno un status de exito ?
+                                        // si -> Adicionar un campo al objeto del array (status) con el valor "ok"
+
+                                        // No - > Adicionar un campo al objeto del array (status) con el valor  "Fail"
+
+                                        //  Retorna promesa con el array (Formato de cadaobejto  "hrf" , "Text", "file", "status" ) de los  links - Fin (Flujo Ok)
+                                    
+                            
+                            // No ->  Retorna promesa con el array (Formato "hrf" , "Text", "file" ) de los  links - Fin (Flujo Ok)
+
+                    // NO -> Mersaje de Error -> Fin
+                    
+                       
+            // No -> Mensaje error y  Fin
+
+    } else {
+        // Convertimos la ruta relativa en una ruta absoluta 
+       reject ('La ruta no es un archivo .md');
+       //fin
+    }
+}

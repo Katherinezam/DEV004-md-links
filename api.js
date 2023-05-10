@@ -16,6 +16,7 @@ const convertirRutaAbsoluta = (ruta) => path.resolve (ruta) ;
 const esArchivoMd = (ruta) => path.extname(ruta) === '.md'
 
 // Función que lee un archivo Markdown y devuelve su contenido
+// UTF-8 es un estándar de codificación de caracteres
 const leerArchivoMd = (ruta) => fs.readFileSync(ruta, 'utf8');
 
 

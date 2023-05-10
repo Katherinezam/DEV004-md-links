@@ -1,5 +1,5 @@
 
-import { existeRuta, esRutaAbsoluta, convertirRutaAbsoluta, esArchivoMd } from "./api";
+import { existeRuta, esRutaAbsoluta, convertirRutaAbsoluta, esArchivoMd, leerArchivoMd } from "./api.js";
 
 // exportar mi function principal (mdLinks)que recibe una ruta y opciones
 export const mdLinks = (path, options) => {
@@ -26,6 +26,7 @@ export const mdLinks = (path, options) => {
         // Convertimos la ruta relativa en una ruta absoluta
         const rutaAbsoluta = convertirRutaAbsoluta(ruta);
         console.log ('La ruta(x)se convirtió en absoluta(y)');
+        
         
       }
     } else {
