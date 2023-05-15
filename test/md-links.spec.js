@@ -1,9 +1,10 @@
 import { mdLinks } from "../mdlinks.js";
+import { existeRuta } from "../api.js";
 
 describe('mdLinks', () => {
 
 it('mdlink procesa un solo archivo con tres links sin validar', () => {
-  const ruta = ejemplo.md;
+  const ruta = 'ejemplo.md';
   // llamo la funcion mdLinks con parametros de prueba const ruta = ejemplo.md
   // mi funcion debe retornar una promesa es por eso que la validacion osea el expectdebe estar dentro del then
   // debo retornar la promesa ya que es un requisito de jest para probar codigo asincrono
@@ -34,4 +35,15 @@ it('mdlink procesa un solo archivo con tres links sin validar', () => {
     // console.log('FIX ME!');
   });
 
+});
+
+//funciona sincrona
+describe('existeRuta', () => {
+it('Deberia recibir true si existe la ruta', () => {
+expect(existeRuta('ejemplo.md')).toBe(true)
+});
+
+it('Deberia recibir false si NO existe la ruta', () => {
+  expect(existeRuta('noexiste.md')).toBe(false)
+});
 });

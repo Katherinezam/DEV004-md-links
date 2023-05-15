@@ -4,7 +4,7 @@ import fs from 'fs'
 import path from 'path'
 
 // Función que comprueba si una ruta existe
-const existeRuta = (ruta) => fs.existsSync(ruta);
+const existeRuta = (ruta) => fs.existsSync(ruta);//true or false
 
 // Función que comprueba si una ruta es absoluta
 const esRutaAbsoluta = (ruta) => path.isAbsolute (ruta);
