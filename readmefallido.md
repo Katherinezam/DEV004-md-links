@@ -1,0 +1,1 @@
+Aquí hay un enlace roto: [Discover Why Broken Links Occur and How to Resolve Them](http://www.example.com/broken-link)

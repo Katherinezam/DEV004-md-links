@@ -5,6 +5,7 @@ import {
   esArchivoMd,
   leerArchivo,
   encontrarEnlaces,
+  validate,
 } from "./api.js";
 
 // exportar mi function principal (mdLinks)que recibe una ruta y opciones
@@ -25,12 +26,28 @@ export const mdLinks = (path = "README.md", options) => {
         // Llamamos a la función leerArchivo para obtener el contenido del archivo
         leerArchivo(path)
           .then((data) => {
-            const enlaces = encontrarEnlaces(data, path); // Pasamos 'path' como argumento
-            console.log("Enlaces encontrados:", enlaces);
-            resolve(enlaces);
+            const listaEnlaces = encontrarEnlaces(data, path); // Pasamos 'path' como argumento
+            console.log("Enlaces encontrados:", listaEnlaces);
+            resolve(listaEnlaces);
             // console.log("Se muestra el contenido del archivo:", data);
             // Aquí puedes implementar la lógica para analizar el contenido del archivo
             // resolve("Links encontrados");
+
+             // Verificamos si se deben validar los enlaces
+            if (options && options.validate) {
+              validate(listaEnlaces)
+                .then((enlacesValidados) => {
+                  console.log("Enlaces encontrados y validados:", enlacesValidados);
+                  resolve(enlacesValidados);
+                })
+                .catch((error) => {
+                  console.error("Error al validar los enlaces:", error);
+                  reject(error);
+                });
+            } else {
+              console.log ("enlaces encontrados", listaEnlaces);
+              resolve(listaEnlaces);
+            }
           })
           .catch((error) => {
             console.error("Error al leer el archivo:", error);
@@ -38,12 +55,10 @@ export const mdLinks = (path = "README.md", options) => {
           });
       } else {
         console.log("La ruta no es un archivo .md");
-        //mensaje de error enviará como el motivo del rechazo
         reject("La ruta no es un archivo .md");
       }
     } else {
-      // Si no existe la ruta, lanzamos un mensaje de error
-      reject(new Error(`La ruta no existe`));
+      reject(new Error("La ruta no existe"));
     }
   });
 };

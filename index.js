@@ -3,10 +3,13 @@
 // y realiza diferentes acciones dependiendo del resultado.
 import { mdLinks } from "./mdlinks.js";
 
-mdLinks().then(() => {})
-.catch((error) => {
-    console.log(error)
-});
+mdLinks("readmefallido.md", { validate: true })
+  .then((result) => {
+    console.log(result);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
 
 // ejecuto
 // mdLinks(); 
