@@ -53,13 +53,18 @@ const leerArchivo = (ruta) =>
     return listaEnlaces;
   };
 
-// Función que valida los enlaces encontrados
+// Función que valida los enlaces encontrados... esta funcion devuelve una promesa que se resolverá 
+// cuando todas las solicitudes de validación de los enlaces se completen
 const validate = (listaEnlaces) => {
+  // se crea un nuevo array para almacenar las solicitudes HTTP
   const httpRequests = listaEnlaces.map((objetoEnlace) => {
+    // se hace una solicitud HEAD a la URL del enlace y devuelve una promesa
     return axios.head(objetoEnlace.href)
       .then((response) => {
+
+         // Cuando la solicitud se resuelve con éxito, actualiza las propiedades del objeto de enlace
         objetoEnlace.status = response.status;
-        objetoEnlace.ok = response.statusText;
+        objetoEnlace.message = response.statusText;
         return objetoEnlace;
       })
       .catch((error) => {
@@ -68,11 +73,11 @@ const validate = (listaEnlaces) => {
         } else {
           objetoEnlace.status = 0;
         }
-        objetoEnlace.ok = 'fail';
+        objetoEnlace.message = 'fail';
         return objetoEnlace;
       });
   });
-
+ // Retorna una nueva promesa que se resolverá cuando todas las solicitudes se completen.
   return Promise.all(httpRequests);
 };
 

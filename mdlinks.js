@@ -27,8 +27,8 @@ export const mdLinks = (path = "README.md", options) => {
         leerArchivo(path)
           .then((data) => {
             const listaEnlaces = encontrarEnlaces(data, path); // Pasamos 'path' como argumento
-            console.log("Enlaces encontrados:", listaEnlaces);
-            resolve(listaEnlaces);
+            //  console.log("Enlaces encontrados sin validar:", listaEnlaces);
+            // resolve(listaEnlaces);
             // console.log("Se muestra el contenido del archivo:", data);
             // Aquí puedes implementar la lógica para analizar el contenido del archivo
             // resolve("Links encontrados");
@@ -37,15 +37,16 @@ export const mdLinks = (path = "README.md", options) => {
             if (options && options.validate) {
               validate(listaEnlaces)
                 .then((enlacesValidados) => {
-                  console.log("Enlaces encontrados y validados:", enlacesValidados);
+                  // console.log("Enlaces encontrados y validados:", enlacesValidados);
                   resolve(enlacesValidados);
+                  console.log("Enlaces encontrados y validados");
                 })
                 .catch((error) => {
                   console.error("Error al validar los enlaces:", error);
                   reject(error);
                 });
             } else {
-              console.log ("enlaces encontrados", listaEnlaces);
+              // console.log ("enlaces encontrados", listaEnlaces);
               resolve(listaEnlaces);
             }
           })
