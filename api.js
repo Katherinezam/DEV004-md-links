@@ -62,7 +62,7 @@ const validate = (listaEnlaces) => {
     return axios.head(objetoEnlace.href)
       .then((response) => {
 
-         // Cuando la solicitud se resuelve con éxito, actualiza las propiedades del objeto de enlace
+         // Cuando la solicitud se resuelve con éxito,se actualiza las propiedades del objetoenlace
         objetoEnlace.status = response.status;
         objetoEnlace.message = response.statusText;
         return objetoEnlace;

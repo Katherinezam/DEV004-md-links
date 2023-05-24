@@ -3,7 +3,7 @@
 // y realiza diferentes acciones dependiendo del resultado.
 import { mdLinks } from "./mdlinks.js";
 
-mdLinks("readmefallido.md", { validate: true })
+mdLinks("babel.config.json", { validate: false })
   .then((result) => {
     console.log(result);
   })

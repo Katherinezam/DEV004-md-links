@@ -55,11 +55,11 @@ export const mdLinks = (path = "README.md", options) => {
             reject(error);
           });
       } else {
-        console.log("La ruta no es un archivo .md");
+        // console.log("La ruta no es un archivo .md");
         reject("La ruta no es un archivo .md");
       }
     } else {
-      reject(new Error("La ruta no existe"));
+      reject("La ruta no existe");
     }
   });
 };
