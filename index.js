@@ -2,8 +2,9 @@
 //código llama a la función mdLinks, espera a que la promesa se resuelva o se rechace,
 // y realiza diferentes acciones dependiendo del resultado.
 import { mdLinks } from "./mdlinks.js";
+//readmefallido.md
 
-mdLinks("babel.config.json", { validate: false })
+mdLinks("README.md", { validate: true })
   .then((result) => {
     console.log(result);
   })
