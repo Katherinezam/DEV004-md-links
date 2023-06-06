@@ -32,7 +32,8 @@ const leerArchivo = (ruta) =>
       }
     });
   });
-
+  //la funcion encontraenlaces recibe el contenido y nombre del archivo en este caso README como parametros y devuelve una
+  //lista de objetos que es  "objetoEnlace" que respresenta los enlaces encontrados en ese contenido.
   // Función que busca y devuelve los enlaces encontrados en el contenido
   const encontrarEnlaces = (contenido, archivo) => { // Agregar 'archivo' como parámetro
     const expresionRegular = /\[([^\]]+)\]\((http[s]?:\/\/[^\)]+)\)/g;
