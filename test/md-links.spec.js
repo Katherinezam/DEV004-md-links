@@ -1,8 +1,65 @@
-// import { mdLinks } from "../mdlinks.js";
+import { mdLinks } from "../mdlinks.js";
 import { existeRuta } from "../api.js";
 import { esRutaAbsoluta } from "../api.js";
 import { convertirRutaAbsoluta } from "../api.js";
 import { esArchivoMd } from "../api.js";
+
+
+
+
+describe('mdLinks', () => {
+  it('mdLinks procesa un solo archivo con tres links sin validar', () => {
+    const ruta = 'C:\\Users\\Astrid\\Documents\\proyectos\\DEV004-md-links\\ejemplotest.md';
+    return mdLinks(ruta, { validate: false }).then((array) => {
+      expect(array).toEqual([
+        {
+          href: 'https://es.wikipedia.org/wiki/Markdown',
+          text: 'Markdown',
+          file: 'C:\\Users\\Astrid\\Documents\\proyectos\\DEV004-md-links\\ejemplotest.md',
+        },
+        {
+          href: 'https://nodejs.org/es/',
+          text: 'Node.js',
+          file: 'C:\\Users\\Astrid\\Documents\\proyectos\\DEV004-md-links\\ejemplotest.md',
+        },
+        {
+          href: 'https://developers.google.com/v8/',
+          text: 'motor de JavaScript V8 de Chrome',
+          file: 'C:\\Users\\Astrid\\Documents\\proyectos\\DEV004-md-links\\ejemplotest.md',
+        },
+      ]);
+    });
+  });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // describe("mdLinks", () => {
 //   it("mdlink procesa un solo archivo con tres links sin validar", () => {
