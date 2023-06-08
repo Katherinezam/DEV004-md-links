@@ -77,7 +77,7 @@ const CLI = () => {
     // Llamo a la función mdLinks con la ruta y la opción de validación que indica si se debe realizar la validación de enlaces
     else {
         mdLinks(path, { validate: validateOption }) //objeto con la opcion validate
-            //Utilizo el método thenpara manejar el resultado exitoso de la promesa devuelta por mdLinks
+            //Utilizo el método then para manejar el resultado exitoso de la promesa devuelta por mdLinks
             //El resultado se almacena en la variable links, que representa una lista de enlaces obtenidos.
             .then((links) => {
                 // verifico si la opción validateOption debe realizar la validación de enlaces.
