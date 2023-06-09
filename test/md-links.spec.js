@@ -87,10 +87,23 @@ describe('mdLinks', () => {
    });
  });
 
- 
+ it('debería devolver que La ruta no es un archivo .md', () => {
+  const rutaArchivoNoMd = 'C:\\Users\\Astrid\\Documents\\proyectos\\DEV004-md-links\\jest.config.js';
 
+  return expect(mdLinks(rutaArchivoNoMd)).rejects.toEqual('La ruta no es un archivo .md');
+});
 
+it('debería devolver una lista vacía si el archivo no contiene enlaces', () => {
+  const rutaSinEnlaces = 'C:\\Users\\Astrid\\Documents\\proyectos\\DEV004-md-links\\ejemplo.md';
+  return mdLinks(rutaSinEnlaces, { validate: false }).then((result) => {
+    expect(result).toEqual([]);
+  });
+});
 
+// it('debería rechazar la promesa si ocurre un error al leer el archivo', () => {
+//   const rutaErrorLectura = 'C:\\Users\\Astrid\\Documents\\proyectos\\DEV004-md-links\\archivoError.md';
+//   return expect(mdLinks(rutaErrorLectura)).rejects.toThrow('Error al leer el archivo');
+// });
 
 // funciones sincronicas
 

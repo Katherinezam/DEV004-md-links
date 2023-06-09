@@ -181,7 +181,7 @@ const CLI = () => {
             })
             .catch((error) => {
                 // Manejar y mostrar errores que ocurran durante la ejecución de mdLinks
-                console.log(chalk.bold.red(`Ocurrió un error: ${error.message}`));
+                console.log(chalk.bold.red(`Ocurrió un error, ingrese la ruta nuevamente: ${error.message}`));
             });
     }
 };
