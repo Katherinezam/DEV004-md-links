@@ -1,4 +1,4 @@
-<p align="center" width="100%"> <img width="100%" src="img/presentacion.gif"></p><br>
+<p align="center" width="100%"> <img width="100%" src="img/presentacion1.gif"></p><br>
 
 ## Indice
 
