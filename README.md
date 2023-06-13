@@ -2,13 +2,13 @@
 
 ## Indice
 
-* [1. Sobre el proyecto](#1)
-* [2. Instalación](#2)
-* [3. Uso](#3)
-* [4. Objetivos de aprendizaje](#4)
-* [5. Diagramas de flujo](#5)
-* [6. Partes del proyecto](#6)
-* [7. Referencias](#7)
+* [1. Sobre el proyecto](#1-sobre-el-proyecto)
+* [2. Instalación](#2-instalación)
+* [3. Uso](#3-uso)
+* [4. Objetivos de aprendizaje](#4-objetivos-de-aprendizaje)
+* [5. Diagramas de flujo](#5-diagramas-de-flujo)
+* [6. Partes del proyecto](#6-partes-del-proyecto)
+* [7. Referencias](#7-referencias)
 
 ***
 ## 1. Sobre el Proyecto
@@ -51,12 +51,12 @@ Donde ```<ruta> ``` es la ruta absoluta o relativa al archivo a analizar, y ``` 
 <p>Si se incluye esta opción, el paquete realizará una <b>solicitud HTTP</b> para verificar si cada enlace <b>funciona correctamente</b>. Si el enlace redirige a una URL que responde <b>"ok"</b>, se considerará como un enlace válido. El resultado incluirá el estado de la respuesta HTTP recibida.</p>
  <br/>
 
- ```--Estadísticas```
+ ```--stats```
  <br/>
 <p>Si se incluye esta opción, la salida incluirá <b>estadísticas básicas</b> sobre los enlaces encontrados en el archivo. Se mostrará el número total de enlaces encontrados y el número de enlaces únicos.</p>
  <br/>
 
- ```--Validate --tats```
+ ```--Validate --stats```
  <br/>
  
 <p>Si se incluyen <b>ambas opciones</b>, el resultado incluirá estadísticas sobre los enlaces encontrados, incluido cuántos enlaces están rotos (es decir, no responda "ok" al realizar una solicitud HTTP).</ p>
