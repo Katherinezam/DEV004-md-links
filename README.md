@@ -141,7 +141,7 @@ averiguar si el link funciona o no. Si el link resulta en una redirección a una
 URL que responde ok, entonces consideraremos el link como ok.
 
 Por ejemplo:
-<p align="center" width="100%"> <img width="100%" src="img/captura1.JPG"></p><br> 
+<p align="center" width="100%"> <img width="100%" src="img/Captura1.JPG"></p><br> 
 
 ##### `--stats`
 
