@@ -4,7 +4,7 @@
 import { mdLinks } from "./mdlinks.js";
 //readmefallido.md
 
-mdLinks("README.md", { validate: false })
+mdLinks("readmeprueba.md", { validate: false })
   .then((result) => {
     console.log(result);
   })
