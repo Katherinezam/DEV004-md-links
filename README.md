@@ -149,20 +149,20 @@ Si pasamos la opción `--stats` el output (salida) será un texto con estadísti
 básicas sobre los links.
 
 Por ejemplo:
-<p align="center" width="100%"> <img width="100%" src="img/captura3.JPG"></p><br> 
+<p align="center" width="100%"> <img width="100%" src="img/Captura3.JPG"></p><br> 
 
 También podemos combinar `--stats` y `--validate` para obtener estadísticas que
 necesiten de los resultados de la validación.
 
 Por ejemplo:
-<p align="center" width="100%"> <img width="100%" src="img/captura2.JPG"></p><br>
+<p align="center" width="100%"> <img width="100%" src="img/Captura2.JPG"></p><br>
 
 ##### `--help`
 
 Adicional a estas opciones ya mencionadas, también se encuentra la opción que describe las instrucciones de uso de md-links y proporciona información sobre cómo ejecutarlo correctamente.
 
 Por ejemplo:
-<p align="center" width="100%"> <img width="100%" src="img/captura4.JPG"></p><br>
+<p align="center" width="100%"> <img width="100%" src="img/Captura4.JPG"></p><br>
 
 ## 7. Referencias
 
